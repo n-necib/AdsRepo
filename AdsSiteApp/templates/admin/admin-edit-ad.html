@@ -1,0 +1,55 @@
+<div class="container">
+    <div id="editAdminAd">
+        <h2>Edit Admin Ad</h2>
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label for="title" class="col-lg-2 control-label">Title:</label>
+                    <div class="col-lg-10">
+                        <input type="text" id="title" class="form-control" ng-model="ad.title" required />
+                    </div>
+                </div>
+                <div class="form-group" >
+                    <label for="text" class="col-lg-2 control-label">Text:</label>
+                    <div class="col-lg-10">
+                        <textarea id="text" class="form-control"  ng-model="ad.text" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price" class="col-lg-2 control-label">Price:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="price" ng-model="ad.price"  required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editImage" class="col-lg-2 control-label">Image</label>
+                    <div>
+                        <input type="file" id="editImage" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCategory" class="col-lg-2 control-label">Category:</label>
+                    <select id="inputCategory" ng-model="categoryId" required>
+                        <option value="ad.categoryId">{{ad.categoryId.townName}}</option>
+                        <option ng-repeat="category in categories.results" value="{{category.objectId}}">{{category.categoryName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputTown" class="col-lg-2 control-label">Town:</label>
+                    <select id="inputTown" ng-model="townId" required>
+                        <option value="ad.townId">{{ad.townId.townName}}</option>
+                        <option ng-repeat="town in towns.results" value="{{town.objectId}}">{{town.townName}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <a ng-click="updateAdminAd(ad, townId, categoryId)" class="button">Edit</a>
+                        <a href="#/admin/ads" class="button">Cancel</a>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="image-edit"></div>
+</div>

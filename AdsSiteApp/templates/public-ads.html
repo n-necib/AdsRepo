@@ -1,0 +1,23 @@
+<div id="public-ads">
+    <img src="img/loading2.gif" ng-hide="ads.results.length >= 1" alt="" width="400px"/>
+    <ul>
+        <li ng-repeat="ad in ads.results | pagination:(currentPage -1)* pageSize | limitTo: pageSize">
+            <section>
+                <div id="imgDiv"><img id="img" ng-src="{{ad.image}}" /></div>
+                <h2><div>{{ad.title}}</div>{{ad.title}}</h2>
+                <p><strong>Date:</strong> {{ad.createdAt| date:'dd-MMM-yyyy'}}</p>
+                <div class="description"><strong>Description:</strong> {{ad.text}}</div>
+                <div class="ads-info">
+                    <p><strong>Price:</strong> {{ad.price}}</p>
+                    <p><strong>Town:</strong> {{ad.townId.townName}}</p>
+                </div>
+                <div>
+                    <p><strong>Owner:</strong> {{ad.userId.name}}</p>
+                    <p><strong>Email:</strong> {{ad.userId.email}}</p>
+                    <p><strong>Phone:</strong> {{ad.userId.phone}}</p>
+                </div>
+
+            </section>
+        </li>
+    </ul>
+</div>

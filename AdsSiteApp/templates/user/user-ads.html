@@ -1,0 +1,28 @@
+<div class="container" id="user-ads">
+    <div ng-include="'templates/user/user-sidebar.html'" class="col-md-3"></div>
+    <div class="col-md-9">
+        <ul>
+            <li ng-repeat="ad in userAds.results | pagination:(currentPage -1)* pageSize | limitTo: pageSize"
+                data-id="{{ad.objectId}}" ng-if="ad.title != null">
+                <section>
+                    <div id="imgDiv"><img ng-src="{{ad.image}}" alt="Image"/></div>
+                    <h2><div>{{ad.title}}</div>{{ad.title}}</h2>
+                    <p><strong>Date:</strong>{{ad.createdAt| date:'dd-MMM-yyyy'}}</p>
+                    <div class="description"><strong>Description:</strong> {{ad.text}}</div>
+                    <div class="ads-info">
+                        <p><strong>Price:</strong> {{ad.price}}</p>
+                        <p><strong>Town:</strong> {{ad.townId.townName}}</p>
+                        <p><strong>Status:</strong> {{ad.status}}</p>
+                    </div>
+                    <div class="ads-info">
+                        <p ng-if="ad.status!='Inactive'"><a ng-click="deactivateAd(ad)">Deactivate</a></p>
+                        <p ng-if="ad.status=='Inactive'"><a href="#/user/ads/editAd/{{ad.objectId}}">Edit</a></p>
+                        <p ng-if="ad.status=='Inactive'"><a ng-click="publishAgainUserAd(ad)">Publish</a></p>
+                        <p ng-if="ad.status=='Inactive'"><a ng-click="deleteAd(ad)">Delete</a></p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <pagination total-items="userAds.results.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+    </div>
+</div>

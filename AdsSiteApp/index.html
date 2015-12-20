@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="adsSiteApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ads Application</title>
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/public.css">
+    <link rel="stylesheet" href="styles/user.css">
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+<ng-view></ng-view>
+
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-route.js"></script>
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/jquery/jquery.noty.js"></script>
+<script src="lib/bootstrap/bootstrap-3.1.1.js"></script>
+<script src="lib/ui.bootstrap/ui.bootstrap.pagination-0.12.0.js"></script>
+
+<script src="app.js"></script>
+
+<script src="js/controllers/user/EditAdCtrl.js"></script>
+<script src="js/controllers/user/EditUserCtrl.js"></script>
+<script src="js/controllers/HomeCtrl.js"></script>
+<script src="js/controllers/user/LoginCtrl.js"></script>
+<script src="js/controllers/user/PublishAdCtrl.js"></script>
+<script src="js/controllers/user/RegisterCtrl.js"></script>
+<script src="js/controllers/user/UserAdsCtrl.js"></script>
+<script src="js/controllers/admin/CategoriesCtrl.js"></script>
+<script src="js/controllers/admin/TownsCtrl.js"></script>
+<script src="js/controllers/admin/AdsCtrl.js"></script>
+<script src="js/controllers/admin/AdminAdsCtrl.js"></script>
+<script src="js/controllers/admin/AdminEditAdCtrl.js"></script>
+<script src="js/controllers/admin/AdminProfileCtrl.js"></script>
+<script src="js/controllers/admin/AdminPublishAdCtrl.js"></script>
+<script src="js/controllers/admin/UsersCtrl.js"></script>
+
+
+<script src="js/services/adsService.js"></script>
+<script src="js/services/categoriesService.js"></script>
+<script src="js/services/townsService.js"></script>
+<script src="js/services/userService.js"></script>
+<script src="js/services/notifyService.js"></script>
+<script src="js/services/adminService.js"></script>
+
+<script src="js/directives/public-ads.js"></script>
+<script src="js/directives/categories.js"></script>
+<script src="js/directives/towns.js"></script>
+
+</body>
+</html>

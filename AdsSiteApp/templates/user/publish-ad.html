@@ -1,0 +1,58 @@
+<div class="container" id="publishAd">
+    <h2>Publish New Ad</h2>
+    <div ng-include="'templates/user/user-sidebar.html'" class="col-md-3"></div>
+    <form class="form-horizontal  col-md-9">
+        <fieldset>
+
+            <div class="form-group">
+                <label for="inputTitle" class="col-lg-2 control-label">Title</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputTitle" placeholder="Title"
+                           ng-model="ad.title" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputText" class="col-lg-2 control-label">Text</label>
+                <div class="col-lg-10 areaImg">
+                    <div>
+                        <textarea name="" id="inputText" cols="60" rows="5" ng-model="ad.text"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPrice" class="col-lg-2 control-label">Price</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputPrice" placeholder="Price" ng-model="ad.price" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputImage" class="col-lg-2 control-label">Image</label>
+                <div>
+                    <input type="file" id="inputImage" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputTown" class="col-lg-2 control-label">Town</label>
+                <select id="inputTown" ng-model="townId" required>
+                    <option value="null">(None)</option>
+                    <option ng-repeat="town in towns.results" value="{{town.objectId}}">{{town.townName}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="inputCategory" class="col-lg-2 control-label">Category</label>
+                <select id="inputCategory" ng-model="categoryId" required>
+                    <option value="null">(None)</option>
+                    <option ng-repeat="category in categories.results" value="{{category.objectId}}">{{category.categoryName}}</option>
+                </select>
+            </div>
+            <div class="image-box"></div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-primary" ng-click="createAd(ad, townId, categoryId)">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

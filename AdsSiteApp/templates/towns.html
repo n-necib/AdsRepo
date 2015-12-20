@@ -1,0 +1,11 @@
+<div id="towns" style="margin: 0; width: 250px">
+    <h2>Towns</h2>
+    <ul>
+        <li ng-repeat="town in towns.results">
+            <label>
+                <input type="radio" ng-value="town.objectId" ng-model="$parent.filterParams.twnSelect" name="townSelect"/>
+                <span>{{town.townName}}</span>
+            </label>
+        </li>
+    </ul>
+</div>

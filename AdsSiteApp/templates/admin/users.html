@@ -1,0 +1,21 @@
+<div >
+    <ul>
+        <li ng-repeat="user in users.results | pagination:(currentPage -1)* pageSize | limitTo: pageSize"
+            ng-if="user.username != null">
+            <h2>{{user.username}}</h2>
+            <div><strong>Date:</strong>{{user.createdAt| date:'dd-MMM-yyyy'}}</div>
+            <div><strong>Name:</strong>{{user.name}}</div>
+            <div><strong>Phone:</strong>{{user.phone}}</div>
+            <div><strong>Town:</strong>{{user.townId.townName}}</div>
+            <div><strong>Email:</strong>{{user.email}}</div>
+            <button type="submit" class="btn btn-primary" ng-click="deleteUser(user)">Delete</button>
+        </li>
+    </ul>
+    <pagination total-items="users.results.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+    <div>
+        <label for="inputUserString"></label>
+        <input type="text"  id="inputUserString">
+        <button type="submit" class="btn btn-primary" ng-click="getFilteredUsers()">Search</button>
+        <button type="submit" class="btn btn-primary" ng-click="resetUsers()">Reset</button>
+    </div>
+</div>

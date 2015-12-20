@@ -1,0 +1,223 @@
+div#login{
+    position: absolute;
+    background: url("../img/login-background.jpg");
+    right: 30%;
+    top: 20%;
+    width: 600px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px -1px #000;
+
+}
+
+div#register{
+    position: absolute;
+    background: url("../img/login-background.jpg");
+    right: 30%;
+    top: 10%;
+    width: 600px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px -1px #000;
+}
+
+div#publishAd{
+    color: #fff;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+}
+
+div#publishAd input{
+    color: #000;
+    width: 443px;
+}
+
+div#publishAd select{
+    color: #000;
+}
+
+.areaImg{
+    color: black;
+    display: block;
+    width: 800px;
+    height: 106px;
+}
+.areaImg div{
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+
+}
+
+.image-box {
+    position: absolute;
+    top: 5px;
+    right: 5%;
+    width: 250px;
+    height: 200px;
+    border: 2px solid black;
+    box-shadow: 4px 4px 3px -1px #000;
+}
+
+.image-box img{
+    width: 100%;
+    height: 100%;
+}
+
+#user-ads{
+    background: url("../img/home-background.jpg") no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#user-ads section{
+    width: 600px;
+    height: 300px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    color: #fff;
+    text-shadow: 2px 2px 8px #fff;
+    box-shadow: 4px 4px 3px -1px #000;
+    border-radius: 10px;
+    background: url("../img/section-background.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+#user-ads li{
+    margin-bottom: 10px;
+}
+#user-ads section p{
+    font-family: sans-serif;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+#user-ads section p a{
+    color: white;
+    margin-left: 5px;
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.button{
+    color: #fff;
+    padding: 5px;
+    width: 40px;
+    height: 30px;
+    background-color: rgb(51, 153, 255);
+    border-radius: 4px;
+}
+.button:hover{
+ cursor: pointer;
+}
+
+#user-ads section p a:hover{
+    text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+    cursor: pointer;
+}
+
+#user-ads section h2 {
+    font-family: "Bell MT", sans-serif;
+    overflow: hidden;
+}
+
+
+#user-ads section img{
+    width: 200px;
+    height: 220px;
+    float: right;
+    padding-top: 60px;
+
+}
+
+#user-ads div.ads-info p{
+    display: inline-block;
+}
+
+div#edit-ad{
+    position: absolute;
+    background: url("../img/login-background.jpg");
+    right: 30%;
+    top: 10%;
+    width: 600px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px -1px #000;
+}
+.image-edit{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 250px;
+    height: 200px;
+    border: 2px solid black;
+    box-shadow: 4px 4px 3px -1px #000;
+}
+.image-edit img{
+    width: 100%;
+    height: 100%;
+}
+
+div#edit-profile label,h2{
+    color: #fff;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 1);
+}
+
+div#edit-profile form{
+    margin-left: 10%;
+    width: 600px;
+}
+div#user-sidebar ul{
+    padding-left: 0;
+}
+div#guest-sidebar ul{
+    padding-left: 0;
+}
+img.logo{
+    padding: 5px;
+    padding-bottom: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+#user-sidebar {
+    background: rgba(0, 24, 102, 0.5);
+    color: rgb(102, 255, 255);
+    text-shadow: 2px 2px 8px #fff;
+    border-radius: 10px;
+    margin-left: 10px;
+    box-shadow: 4px 4px 5px -1px #000;
+}
+
+#user-sidebar a{
+    font-size: 20px;
+    color: rgb(229, 255, 255);
+}
+
+#user-sidebar h2{
+    padding-left: 5px;
+}
+
+div#wrapper h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 300px;
+}
+
+.email{
+    background: url("../img/login-background.jpg");
+    position: absolute;
+    padding: 5px;
+    top:55%;
+    right: 35%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px -1px #000;
+}
+
+a:hover{
+    cursor: pointer;
+}

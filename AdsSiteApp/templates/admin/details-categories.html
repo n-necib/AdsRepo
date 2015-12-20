@@ -1,0 +1,18 @@
+<div class="container">
+    <div ng-include="'templates/admin/admin-sidebar.html'" class="col-md-3"></div>
+    <div class="col-md-9" id="categories">
+        <h2>Categories</h2>
+        <table>
+            <tr ng-repeat="category in categories.results" data-id="category.objectId" ng-if="category.categoryName != null">
+                <td><input type="text"  ng-model="category.categoryName" /></td>
+                <td><a ng-click="editCategory(category)"  class="button">Edit</a></td>
+                <td><a ng-click="deleteCategory(category)"  class="button">Delete</a></td>
+            </tr>
+        </table>
+        <div>
+            <label for="inputCat"> Add Category</label>
+            <input type="text"  ng-model="cat.categoryName" id="inputCat"/>
+            <div><a ng-click="addCategory(cat)"  class="button">Add</a></div>
+        </div>
+    </div>
+</div>

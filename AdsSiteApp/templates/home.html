@@ -1,0 +1,27 @@
+<div id="wrapper">
+    <header>
+        <h1><img src="img/logo5.png" alt="">Ads</h1>
+        <div>
+            <h3 ng-if="!isGuest()">Welcome, {{username}}</h3>
+        </div>
+        <a ng-if="!isGuest()" ng-click="logout()">Logout</a>
+    </header>
+    <div class="row">
+        <div class="col-md-2">
+            <div ng-include="'templates/guest-sidebar.html'" ng-if="isGuest()"></div>
+            <div ng-include="'templates/user/user-sidebar.html'" ng-if="isUser()"></div>
+            <div ng-include="'templates/admin/admin-sidebar.html'" ng-if="isAdmin()"></div>
+        </div>
+        <div class="col-md-7">
+            <pagination total-items="ads.results.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+            <public-ads></public-ads>
+        </div>
+        <div class="col-md-3">
+            <categories></categories>
+            <towns></towns>
+            <button type="submit" class="btn btn-primary" ng-click="getFilteredAds(filterParams)">Search</button>
+            <button type="submit" class="btn btn-primary" ng-click="getAds()">Reset Filter</button>
+        </div>
+    </div>
+    <footer><p>&copy;No Rights Reserved</p></footer>
+</div>

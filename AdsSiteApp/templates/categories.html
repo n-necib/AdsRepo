@@ -1,0 +1,11 @@
+<div id="categories" style="margin: 0; width: 250px">
+    <h2>Categories</h2>
+    <ul>
+        <li ng-repeat="category in categories.results">
+                <label>
+                    <input type="radio" ng-value="category.objectId" ng-model="$parent.filterParams.catSelect" name="categorySelect"/>
+                    <span>{{category.categoryName}}</span>
+                </label>
+        </li>
+    </ul>
+</div>

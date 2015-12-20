@@ -1,0 +1,54 @@
+<div class="container" id="edit-profile">
+    <h2>Edit Profile</h2>
+    <div ng-include="'templates/user/user-sidebar.html'" class="col-md-3"></div>
+    <form class="form-horizontal col-md-9">
+        <fieldset>
+
+            <div class="form-group">
+                <label for="inputUsername" class="col-lg-2 control-label">Username</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputUsername"
+                           ng-model="user.username" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputPassword"
+                           ng-model="user.password" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputName" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputName"   ng-model="user.name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputPhone"   ng-model="user.phone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputEmail"  ng-model="user.email" >
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputTown" class="col-lg-2 control-label">Town</label>
+                <select id="inputTown" ng-model="townId">
+                    <option ng-repeat="town in towns.results" value="{{town.objectId}}">{{town.townName}}</option>
+                    <option value="user.townId">{{user.townId.townName}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Reset</button>
+                    <button type="submit" class="btn btn-primary" ng-click="editUser(user, townId)">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

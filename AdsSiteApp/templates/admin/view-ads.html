@@ -1,0 +1,39 @@
+<div id="view-ads">
+    <div ng-include="'templates/admin/admin-sidebar.html'" class="col-md-3"></div>
+    <div class="view-ads col-md-9">
+        <ul>
+            <li ng-repeat="ad in usersAds.results | pagination:(currentPage -1)* pageSize | limitTo: pageSize" data-id="{{ad.objectId}}"
+                ng-if="ad.title != null">
+                <section>
+                    <div><img ng-src="{{ad.image}}" alt="Image" width="100px" height="100px"/></div>
+                    <h2><div>{{ad.title}}</div>{{ad.title}}</h2>
+                    <p><strong>Date:</strong>{{ad.createdAt| date:'dd-MMM-yyyy'}}</p>
+                    <div class="description"><strong>Text:</strong>{{ad.text}}</div>
+                    <div class="ads-info">
+                        <p><strong>Price:</strong>{{ad.price}}</p>
+                        <p><strong>Town:</strong>{{ad.townId.townName}}</p>
+                        <p><strong>Status:</strong> {{ad.status}}</p>
+                    </div>
+                    <div class="owner">
+                        <p><strong>Owner:</strong>{{ad.userId.username}}</p>
+                        <p><strong>Email:</strong>{{ad.userId.email}}</p>
+                        <p><strong>Phone:</strong>{{ad.userId.phone}}</p>
+                    </div>
+                    <div class="statusChange">
+                        <p ng-if="ad.status=='Approved'"><a ng-click="waitingApproval(ad)">Waiting Approval</a></p>
+                        <p ng-if="ad.status=='Waiting Approval'"><a ng-click="approve(ad)">Approve</a></p>
+                        <p ng-if="ad.status=='Waiting Approval'"><a ng-click="deleteAd(ad)">Delete</a></p>
+                    </div>
+                </section>
+            </li>
+        </ul>
+        <form>
+            <input type="radio" name="filterStatus" value="Approved" ng-model="statusParam">Approved
+            <br>
+            <input type="radio" name="filterStatus" value="Waiting Approval" ng-model="statusParam">Waiting Approval
+            <button type="submit" class="btn btn-primary" ng-click="getFilteredStatusAds(statusParam)">Search</button>
+            <button type="submit" class="btn btn-primary" ng-click="resetAds()">Reset</button>
+        </form>
+    </div>
+    <pagination total-items="usersAds.results.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+</div>
