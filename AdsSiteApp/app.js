@@ -74,10 +74,6 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'AdminEditAdCtrl',
         templateUrl: 'templates/admin/admin-edit-ad.html'
     });
-    //$routeProvider.when('/users', {
-    //    controller: 'UsersCtrl',
-    //    templateUrl: 'templates/admin/users.html'
-    //});
 
     $routeProvider.otherwise(
         { redirectTo: '/' }
